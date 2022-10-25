@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-loanprocalculator-dev-145319-authRole",
+      "UnauthRoleArn": "arn:aws:iam::591299023101:role/amplify-loanprocalculator-dev-145319-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::591299023101:role/amplify-loanprocalculator-dev-145319-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-loanprocalculator-dev-145319-deployment",
+      "UnauthRoleName": "amplify-loanprocalculator-dev-145319-unauthRole",
+      "StackName": "amplify-loanprocalculator-dev-145319",
+      "StackId": "arn:aws:cloudformation:us-west-1:591299023101:stack/amplify-loanprocalculator-dev-145319/e47564d0-53dd-11ed-8077-06acd6d7f14b",
+      "AmplifyAppId": "d35kjfo2ozko29"
+    },
+    "categories": {
+      "api": {
+        "loanprocalculator": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d35kjfo2ozko29",
+          "type": "manual"
+        }
+      }
+    }
+  }
+}

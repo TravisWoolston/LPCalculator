@@ -1,17 +1,15 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import Login from './components/Login';
-import { deepmerge } from '@mui/utils';
-import { createTheme } from '@mui/material/styles';
-import { green, purple } from '@mui/material/colors';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import Login from "./components/Login";
+import { ThemeProvider, createTheme } from "@material-ui/core/styles";
+import { green } from "@mui/material/colors";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: purple[500],
+      main: "#3c5fd1",
     },
     secondary: {
       main: green[500],
@@ -19,11 +17,13 @@ const theme = createTheme({
   },
 });
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App/>
-  </React.StrictMode>
+  <ThemeProvider theme={theme}>
+    <React.StrictMode>
+      <Login promptName="Login" />
+    </React.StrictMode>
+  </ThemeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

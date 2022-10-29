@@ -7,7 +7,7 @@ import {
   Typography,
   Link,
 } from "@material-ui/core";
-import "../index.css"
+import "../index.css";
 import Stack from "@mui/material/Stack";
 import App from "../App";
 import createUser from "../operations/createUser";

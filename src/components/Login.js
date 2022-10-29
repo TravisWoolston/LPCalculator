@@ -7,6 +7,7 @@ import {
   Typography,
   Link,
 } from "@material-ui/core";
+import "../index.css"
 import Stack from "@mui/material/Stack";
 import App from "../App";
 import createUser from "../operations/createUser";
@@ -125,7 +126,7 @@ const Login = (props) => {
             </Paper>
           </Grid>
         ) : (
-          <App userData={userData} />
+          <App userData={userData} setLogged={setLogged} />
         )
       ) : (
         <SignUp />

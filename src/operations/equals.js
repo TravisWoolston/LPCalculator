@@ -43,7 +43,7 @@ const equals = (display, result = 0, operator) => {
         return equals(display, Number(result) / Number(currentVal));
       }
     default:
-      return result;
+      return result.toFixed(4);
   }
 };
 export default equals;

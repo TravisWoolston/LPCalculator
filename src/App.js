@@ -1,10 +1,10 @@
-/* eslint-disable no-unused-vars */
+import React, { useState } from "react";
+import SignOut from "./components/SignOut"
 import Wrapper from "./components/Wrapper";
 import Screen from "./components/Screen";
 import ButtonBox from "./components/ButtonBox";
 import Button from "./components/Button";
 import btnValues from "./constants/btnValues";
-import React, { useState, useEffect } from "react";
 import equals from "./operations/equals";
 import { Amplify, API, graphqlOperation } from "aws-amplify";
 import awsExports from "./aws-exports";
@@ -14,17 +14,19 @@ Amplify.configure(awsExports);
 const App = (props) => {
   const [balance, setBalance] = useState(props.userData.balance);
   const [userData, setUserData] = useState(props.userData);
-  // console.log('theme', this.theme)
-
-  let screenVal = 0;
   const [display, setDisplay] = useState(0);
+  const signOut = () => {
+    console.log('signout')
+    props.setLogged(false)
+  }
   const clickHandler = (e) => {
     e.preventDefault();
     const input = e.target.innerHTML;
     const isNum = !isNaN(input);
     switch (true) {
       case input === "rnd":
-        setDisplay(`${Math.random()}`);
+        const rnd = Math.random().toFixed(2)
+        setDisplay((display === 0 || !isNaN(display[display.length - 2])) ? rnd : `${display}${rnd}`);
         return;
       case input === "√":
         setDisplay(`${Math.sqrt(Number(display))}`);
@@ -55,7 +57,8 @@ const App = (props) => {
 
   return (
     <>
-      Balance: {balance}
+    <SignOut signOut= {signOut}/>
+      <div className="balance">Balance: ${balance}</div>
       <Wrapper>
         <Screen value={display} />
         <ButtonBox>
